@@ -1,9 +1,49 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Google
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>1</ion-card-subtitle>
+      <ion-card-title>Grafica</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <google-chart [data]="columnChart1"></google-chart>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>2</ion-card-subtitle>
+      <ion-card-title>Grafica</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <google-chart [data]="columnChart2"></google-chart>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>3</ion-card-subtitle>
+      <ion-card-title>Grafica</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <google-chart [data]="barChart"></google-chart>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>4</ion-card-subtitle>
+      <ion-card-title>Grafica</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <google-chart [data]="barChart2"></google-chart>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
