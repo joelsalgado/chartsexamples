@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import * as HighCharts from 'highcharts';
-
+import {Router} from '@angular/router';
+import {Storage} from '@ionic/storage';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -8,7 +9,8 @@ import * as HighCharts from 'highcharts';
 })
 export class Tab1Page {
 
-  constructor() { }
+  constructor(public router: Router, private storage: Storage) {
+  }
 
   ionViewDidEnter() {
     this.plotSimpleBarChart();
@@ -34,7 +36,7 @@ export class Tab1Page {
       },
       plotOptions: {
         pie: {
-          innerSize: 100,
+          innerSize: 50,
           depth: 45
         },
         series: {
@@ -213,6 +215,11 @@ export class Tab1Page {
 
   funhehe4(event) {
     console.log(event.point.name);
+  }
+
+  logout() {
+    this.storage.set('active', 0);
+    this.router.navigate(['/login/']);
   }
 
 }

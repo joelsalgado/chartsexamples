@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inicio de Sesion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="userlog && usersta == 0; else login">
+    <br>
+    <p align="center"><ion-icon name="contact"></ion-icon> {{this.userlog}}</p>
+
+    <ion-button (click)="onSignIn()" color="success" shape="full" expand="block">Iniciar</ion-button>
+    <ion-button (click)="otherac()" color="light" shape="full" expand="block"><p style="color: cornflowerblue">Iniciar sesion en otra cuenta</p></ion-button>
+
+  </div>
+  <ng-template #login>
+      <form [formGroup]="loginForm">
+        <ion-list>
+          <ion-item>
+            <ion-label position="stacked">Usuario</ion-label>
+            <ion-input formControlName="username" type="text">
+            </ion-input>
+          </ion-item>
+        </ion-list>
+      </form>
+    <ion-row class="signin">
+    <ion-col>
+        <ion-button (click)="onSignIn()" color="primary" shape="full" expand="block">Iniciar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ng-template>
+
+</ion-content>
